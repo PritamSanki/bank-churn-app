@@ -1024,11 +1024,9 @@ def page_model_performance(artifacts):
 
     # Styled metrics table
     st.dataframe(
-        results_df.style
-        .background_gradient(cmap="Blues", subset=["ROC-AUC", "F1", "PR-AUC"])
-        .format("{:.4f}"),
-        use_container_width=True,
-    )
+    results_df.round(4),
+    use_container_width=True
+)
 
     # Radar chart
     metrics = ["Accuracy", "Precision", "Recall", "F1", "ROC-AUC", "PR-AUC"]
