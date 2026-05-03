@@ -801,11 +801,10 @@ def page_risk_monitoring(scored):
                                  "NumOfProducts", "IsActiveMember",
                                  "Churn_Probability", "Risk_Band", "Expected_Revenue_Loss"]
                     if c in top_risky.columns]
-   st.dataframe(
+    st.dataframe(
     top_risky[display_cols].reset_index(drop=True),
     use_container_width=True,
-    height=500
-)
+    height=500)
 
     # Heatmap — age group vs geography
     if "Age" in scored.columns and "Geography" in scored.columns:
